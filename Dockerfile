@@ -15,5 +15,9 @@ RUN apk add --no-cache \
 # Copies your code file from your action repository to the filesystem path `/` of the container
 COPY action.sh /action.sh
 
+RUN mkdir -p ~/_site
+RUN chown -R admin:admin /_site
+RUN chmod 755 /_site
+
 # Code file to execute when the docker container starts up (`action.sh`)
 ENTRYPOINT ["/action.sh"]
