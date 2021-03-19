@@ -5,6 +5,9 @@ gem install bundler jekyll
 bundle install
 bundle exec jekyll -v || exit 1
 
+mkdir -p _site
+chmod 755 _site
+
 echo '🧹 Clean site'
 if [ -d "_site" ]; then
     rm -rf _site/*
