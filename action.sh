@@ -6,12 +6,12 @@ bundle install
 bundle exec jekyll -v || exit 1
 
 echo '🧹 Clean site'
-if [ -d "_site" ]; then
-    rm -rf _site/*
+if [ -d "docs" ]; then
+    rm -rf docs/*
 fi
 
 echo '🔨 Build site'
-bundle exec jekyll build
+bundle exec jekyll build -d docs
 rm -rf .jekyll-cache
 
 echo '🧪 Deploy build'
