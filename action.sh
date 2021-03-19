@@ -14,9 +14,6 @@ echo '🔨 Build site'
 bundle exec jekyll build
 rm -rf .jekyll-cache
 
-mkdir -p _site/tag
-chmod -R 755 _site/tag
-
 echo '🧪 Deploy build'
 git config user.name "${GITHUB_ACTOR}"
 git config user.email "${GITHUB_ACTOR}@users.noreply.github.com"
