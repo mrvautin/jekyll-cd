@@ -5,9 +5,6 @@ gem install bundler jekyll
 bundle install
 bundle exec jekyll -v || exit 1
 
-mkdir -p _site
-chmod 755 _site
-
 echo '🧹 Clean site'
 if [ -d "_site" ]; then
     rm -rf _site/*
@@ -16,6 +13,10 @@ fi
 echo '🔨 Build site'
 bundle exec jekyll build
 rm -rf .jekyll-cache
+
+
+mkdir -p _site/tag
+chmod 755 _site/tag
 
 echo '🧪 Deploy build'
 git config user.name "${GITHUB_ACTOR}"
